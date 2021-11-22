@@ -55,19 +55,39 @@
        </a-menu>
      </a-layout-sider>
      <a-layout-content :style="{ padding: '0 24px', minHeight: '280px' }">
-       Content
+       <pre>
+         {{ebooks}}
+         {{ebooks2}}
+       </pre>
      </a-layout-content>
   </a-layout>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent,onMounted,ref,reactive,toRef } from 'vue';
 import axios from "axios";
 export default defineComponent({
   name: 'home',
-  async setup() {
-    const res = await axios.get("http://127.0.0.1:8880/ebook/list")
-    console.log(res)
+   setup() {
+    console.log('setup')
+     let ebooks = ref();
+     let ebooks1 = reactive({books:[]});
+    onMounted( async ()=>{
+      console.log('onMounted')
+      let res = await axios.get("http://127.0.0.1:8880/ebook/list?name=教程")
+      if (res){
+        let data = res.data
+        ebooks.value = data.content;
+        ebooks1.books = data.content
+        console.log(ebooks)
+
+      }
+    })
+
+     return {
+       ebooks,
+       ebooks2:toRef(ebooks1,"books")
+     }
   }
 });
 </script>
