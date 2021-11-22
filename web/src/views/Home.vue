@@ -62,11 +62,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-
+import axios from "axios";
 export default defineComponent({
-  name: 'Home',
-  components: {
-
-  },
+  name: 'home',
+  async setup() {
+    const res = await axios.get("http://127.0.0.1:8880/ebook/list")
+    console.log(res)
+  }
 });
 </script>
