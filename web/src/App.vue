@@ -3,19 +3,19 @@
     <the-header />
     <a-layout>
         <router-view />
-        <a-layout-footer style="text-align: center">
-          甲娃电子书
-        </a-layout-footer>
+        <the-footer />
       </a-layout>
   </a-layout>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TheHeader from '@/components/the-header.vue';
+import TheFooter from '@/components/the-footer.vue';
 export default defineComponent({
   name: "app",
   components:{
-    TheHeader
+    TheHeader,
+    TheFooter
   }
 })
 </script>
