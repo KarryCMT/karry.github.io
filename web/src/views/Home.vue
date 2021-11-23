@@ -85,7 +85,7 @@ export default defineComponent({
      * 查询所有分类
      **/
     const handleQueryCategory = () => {
-      axios.get("/category/all").then((response:any) => {
+      axios.get("/category/all").then((response) => {
         const data = response.data;
         if (data.success) {
           categorys = data.content;
@@ -116,7 +116,7 @@ export default defineComponent({
           size: 1000,
           categoryId2: categoryId2
         }
-      }).then((response:any) => {
+      }).then((response) => {
         const data = response.data;
         ebooks.value = data.content.list;
         // ebooks1.books = data.content;
