@@ -1,4 +1,4 @@
-# wiki-web
+# web
 
 ## Project setup
 ```
