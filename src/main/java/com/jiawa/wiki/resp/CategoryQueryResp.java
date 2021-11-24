@@ -1,11 +1,8 @@
-package com.jiawa.wiki.req;
+package com.jiawa.wiki.resp;
 
-import javax.validation.constraints.NotNull;
-
-public class EbookSaveReq {
+public class CategoryQueryResp {
     private Long id;
 
-    @NotNull(message = "【名称】不能为空")
     private String name;
 
     private Long category1Id;
