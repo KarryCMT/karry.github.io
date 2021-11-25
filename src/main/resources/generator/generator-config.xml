@@ -42,8 +42,8 @@
         <!-- 生成指定表的文件 关键 -->
         <!-- <table tableName="demo" domainObjectName="Demo"/>-->
 <!--        <table tableName="ebook"/>-->
-        <table tableName="category"/>
-        <!--<table tableName="doc"/>-->
+<!--        <table tableName="category"/>-->
+        <table tableName="doc"/>
         <!--<table tableName="content"/>-->
         <!--<table tableName="user"/>-->
         <!--<table tableName="demo"/>-->
