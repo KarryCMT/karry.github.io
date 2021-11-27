@@ -2,8 +2,8 @@ package com.jiawa.wiki.controller;
 
 import com.jiawa.wiki.req.DocQueryReq;
 import com.jiawa.wiki.req.DocSaveReq;
-import com.jiawa.wiki.resp.DocQueryResp;
 import com.jiawa.wiki.resp.CommonResp;
+import com.jiawa.wiki.resp.DocQueryResp;
 import com.jiawa.wiki.resp.PageResp;
 import com.jiawa.wiki.service.DocService;
 import org.springframework.web.bind.annotation.*;
@@ -42,11 +42,12 @@ public class DocController {
         return resp;
     }
 
-    @DeleteMapping("/delete/{id}")
-    public CommonResp delete(@PathVariable Long id){
-        CommonResp resp = new CommonResp<>();
-        docService.delete(id);
-        return resp;
-    }
+//    @DeleteMapping("/delete/{idsStr}")
+//    public CommonResp delete(@PathVariable String idsStr) {
+//        CommonResp resp = new CommonResp<>();
+//        List<String> list = Arrays.asList(idsStr.split(","));
+//        docService.delete(list);
+//        return resp;
+//    }
 
 }
