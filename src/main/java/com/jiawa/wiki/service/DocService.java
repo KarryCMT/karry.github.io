@@ -27,6 +27,7 @@ public class DocService {
     private SnowFlake snowFlake;
     @Resource
     private ContentMapper contentMapper;
+
     public PageResp<DocQueryResp> list(DocQueryReq req) {
         DocExample docExample = new DocExample();
         docExample.setOrderByClause("sort asc");
@@ -43,8 +44,9 @@ public class DocService {
         return pageResp;
     }
 
-    public List<DocQueryResp> all() {
+    public List<DocQueryResp> all(Long ebookId) {
         DocExample docExample = new DocExample();
+        docExample.createCriteria().andEbookIdEqualTo(ebookId);
         docExample.setOrderByClause("sort asc");
         List<Doc> docList = docMapper.selectByExample(docExample);
 
@@ -77,6 +79,16 @@ public class DocService {
 
     public void delete(Long id) {
         docMapper.deleteByPrimaryKey(id);
+    }
+
+    public String find(Long id) {
+//
+        Content content = contentMapper.selectByPrimaryKey(id);
+        if (ObjectUtils.isEmpty(content)){
+            return "";
+        }else{
+            return content.getContent();
+        }
     }
 
     // TODO: 2021/11/27 该接口有问题暂时未找到解决方案

@@ -19,10 +19,10 @@ public class DocController {
     @Resource
     private DocService docService;
     // 查询出来返回一个数组对象
-    @GetMapping("/all")
-    public CommonResp add(){
+    @GetMapping("/all/{ebookId}")
+    public CommonResp add(@PathVariable Long ebookId){
         CommonResp<List<DocQueryResp>> resp = new CommonResp<>();
-        List<DocQueryResp> list = docService.all();
+        List<DocQueryResp> list = docService.all(ebookId);
         resp.setContent(list);
         return resp;
     }
@@ -39,6 +39,15 @@ public class DocController {
     public CommonResp save(@RequestBody DocSaveReq req){
         CommonResp resp = new CommonResp<>();
         docService.save(req);
+        return resp;
+    }
+
+    // 查询出来返回一个数组对象
+    @GetMapping("/find/{id}")
+    public CommonResp find(@Valid Long id){
+        CommonResp<String> resp = new CommonResp<>();
+        String content = docService.find(id);
+        resp.setContent(content);
         return resp;
     }
 

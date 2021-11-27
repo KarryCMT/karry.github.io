@@ -1,26 +1,36 @@
 package com.jiawa.wiki.domain;
 
-public class Demo {
-    private Integer id;
+public class User {
+    private Long id;
 
-    private String username;
+    private String loginName;
+
+    private String name;
 
     private String password;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -38,7 +48,8 @@ public class Demo {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", username=").append(username);
+        sb.append(", loginName=").append(loginName);
+        sb.append(", name=").append(name);
         sb.append(", password=").append(password);
         sb.append("]");
         return sb.toString();
