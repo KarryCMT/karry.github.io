@@ -80,6 +80,14 @@ public class UserController {
         return resp;
     }
 
+    @GetMapping("/logout/{token}")
+    public CommonResp logout(@PathVariable String token){
+        CommonResp resp = new CommonResp<>();
+        redisTemplate.delete(token);
+        LOG.info("从Redis中删除Token", token);
+        return resp;
+    }
+
     @RequestMapping("/redis/get/{key}")
     public Object get(@PathVariable Long key) {
         Object object = redisTemplate.opsForValue().get(key);
