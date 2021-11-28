@@ -43,10 +43,10 @@ public class DocController {
     }
 
     // 查询出来返回一个数组对象
-    @GetMapping("/find/{id}")
-    public CommonResp find(@Valid Long id){
+    @GetMapping("/find-content/{id}")
+    public CommonResp findContent(@Valid Long id){
         CommonResp<String> resp = new CommonResp<>();
-        String content = docService.find(id);
+        String content = docService.findContent(id);
         resp.setContent(content);
         return resp;
     }
