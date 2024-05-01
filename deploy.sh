@@ -18,6 +18,6 @@
   # 如果发布到 https://<USERNAME>.github.io/<REPO>
   # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master:gh-pages
   # 我的配置如下
-  git push -f https://github.com/karrycmt/karrycmt.github.io.git 1.0.0:gh-pages
+  git push -f https://github.com/karrycmt/karrycmt.github.io.git main:gh-pages
 
   cd -
