@@ -13,35 +13,16 @@ export default defineUserConfig({
   theme: recoTheme({
     style: '@vuepress-reco/style-default',
     logo: '/logo.png',
-    author: 'lee',
+    author: '李同学(karrylee)',
     authorAvatar: '/head.png',
     docsRepo: 'https://github.com/KarryCMT',
     docsBranch: 'main',
     docsDir: 'example',
     lastUpdatedText: '',
-    series: {
-      '/docs/theme-reco/': [
-        {
-          text: 'module one',
-          children: ['home', 'theme'],
-        },
-        {
-          text: 'module two',
-          children: ['api', 'plugin'],
-        },
-      ],
-    },
     navbar: [
       { text: '首页', link: '/' },
       { text: '分类', link: '/categories/reco/1/' },
       { text: '标签', link: '/tags/tag1/1/' },
-      {
-        text: '文档',
-        children: [
-          { text: 'vuepress-reco', link: '/docs/theme-reco/theme' },
-          { text: 'vuepress-theme-reco', link: '/blogs/other/guide' },
-        ],
-      },
     ],
     bulletin: {
       body: [
