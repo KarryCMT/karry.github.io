@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as _,a as c}from"./app-4ea988d2.js";const o={},s=c("p",null,"微前端架构方案&落地",-1),n=[s];function a(r,l){return t(),_("div",null,n)}const f=e(o,[["render",a],["__file","092101.html.vue"]]);export{f as default};
